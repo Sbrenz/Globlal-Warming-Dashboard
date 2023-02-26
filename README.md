@@ -3,17 +3,13 @@
 In this project i built a dashboard that displays five charts to keep track of the increase of global temperature,
 carbon dioxide, nitrous oxide, methane and the decreas of the polar ice.
 
-For the structure of the app i had use :
-\*React-router
+For the structure of the app i had use : React-router
 
-Css Framework :
-\*Bootstrap
+Css Framework : Bootstrap
 
-For HTTP requests :
-\*Axios
+For HTTP requests : Axios
 
-For the chart :
-\*Chart.js
+For the chart : Chart.js
 
 # Getting Started with Create React App
 
