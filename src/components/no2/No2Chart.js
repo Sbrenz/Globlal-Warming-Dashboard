@@ -20,7 +20,7 @@ const No2Chart = ({ dateData, averageData }) => {
   return (
     <section id="no2" className="container">
       <div className="text-center">
-        <h1 className="p-5">Global increase of Nitrous Oxide</h1>
+        <h1 className="p-5">Global increase of Nitrogen Dioxide</h1>
       </div>
       <div className="text-start">
         <Line data={chartData} />

@@ -1,7 +1,7 @@
 # Global Warming Dashboard app
 
 In this project i built a dashboard that displays five charts to keep track of the increase of global temperature,
-carbon dioxide, nitrous oxide, methane and the decreas of the polar ice.
+carbon dioxide, nitrogen dioxide, methane and the decreas of the polar ice.
 
 For the structure of the app i had use : React-router
 

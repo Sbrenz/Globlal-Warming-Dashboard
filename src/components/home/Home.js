@@ -45,7 +45,7 @@ const Home = () => {
             You will see five charts, those rapresent the increase of the
             <br />
             global temperature, carbon dioxide, methane,
-            <br /> nitrous oxide and the decreased of the polar ice.
+            <br /> nitrogen dioxide and the decreased of the polar ice.
           </p>
         </div>
       </div>
