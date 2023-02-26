@@ -1,0 +1,20 @@
+:root {
+  --backgroundColor: #212016;
+}
+
+.navigationBar {
+  background-color: var(--backgroundColor);
+}
+
+.link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.link:hover {
+  color: grey;
+}
+
+.chartLink {
+  cursor: default;
+}

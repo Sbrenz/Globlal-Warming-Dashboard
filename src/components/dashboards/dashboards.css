@@ -1,0 +1,15 @@
+:root {
+  --backgroundColorDash: #e4decd;
+}
+
+.dash {
+  background-color: var(--backgroundColorDash);
+}
+
+.polar {
+  margin-bottom: 2em;
+}
+
+.asterisk {
+  font-size: small;
+}

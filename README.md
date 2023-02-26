@@ -1,3 +1,20 @@
+# Global Warming Dashboard app
+
+In this project i built a dashboard that displays five charts to keep track of the increase of global temperature,
+carbon dioxide, nitrous oxide, methane and the decreas of the polar ice.
+
+For the structure of the app i had use :
+\*React-router
+
+Css Framework :
+\*Bootstrap
+
+For HTTP requests :
+\*Axios
+
+For the chart :
+\*Chart.js
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
