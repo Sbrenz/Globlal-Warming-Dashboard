@@ -11,7 +11,6 @@ For HTTP requests : Axios
 
 For the chart : Chart.js
 
-<<<<<<< HEAD
 ## Installation
 
 Use the package manager npm to install :
@@ -30,11 +29,10 @@ npm install axios
 
 chart.js with the command :
 npm install chart.js
-=======
+
 ## Link for the app
 
 https://globalwarmingdashboard.netlify.app/
->>>>>>> 51449fb17d6c55b2ac4167b877593c79438e6f43
 
 # Getting Started with Create React App
 
