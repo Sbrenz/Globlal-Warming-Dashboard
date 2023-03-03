@@ -13,7 +13,9 @@ For the chart : Chart.js
 
 ## Installation
 
-Use the package manager npm to install :
+In the project folder use the package manager npm to install :
+
+node_modules dependecies with the command : npm install
 
 react with the command :
 npm install react
