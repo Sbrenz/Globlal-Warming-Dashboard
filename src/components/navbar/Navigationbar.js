@@ -20,7 +20,7 @@ const Navigationbar = () => {
           </Link>
         </Navbar.Brand>
         <Nav.Link className="col chartLink">
-          <Link className="link  lead" to={"/Dashboard"}>
+          <Link className="link  lead" to={"/dashboard"}>
             Charts
           </Link>
         </Nav.Link>

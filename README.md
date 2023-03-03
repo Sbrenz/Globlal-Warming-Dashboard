@@ -1,15 +1,34 @@
 # Global Warming Dashboard app
 
-In this project i built a dashboard that displays five charts to keep track of the increase of global temperature,
-carbon dioxide, nitrogen dioxide, methane and the decreas of the polar ice.
+In this project I built a dashboard that shows five graphs to track global temperature rise,
+carbon dioxide, nitrogen dioxide, methane and the decrease in polar ice.
 
-For the structure of the app i had use : React-router
+To structure the app i used : React-router
 
 Css Framework : Bootstrap
 
 For HTTP requests : Axios
 
 For the chart : Chart.js
+
+## Installation
+
+Use the package manager npm to install :
+
+react with the command :
+npm install react
+
+react-router-dom with the command :
+npm install react-router-dom
+
+react-bootstrap with the command :
+npm install react-bootstrap
+
+axios with the command :
+npm install axios
+
+chart.js with the command :
+npm install chart.js
 
 # Getting Started with Create React App
 
@@ -81,3 +100,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

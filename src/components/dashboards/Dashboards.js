@@ -1,13 +1,14 @@
 import React from "react";
 
 // import components
-import TemperatureApi from "../client-api/TemperatureApi";
-import Co2Api from "../client-api/Co2Api";
-import MethaneApi from "../client-api/MethaneApi";
-import No2Api from "../client-api/No2Api";
-import PolarIceApi from "../client-api/PolarIceApi";
+
 import Navigationbar from "../navbar/Navigationbar";
 import Footer from "../footer/Footer";
+import TemperatureApi from "../client-api/TemperatureApi";
+import Co2Api from "../client-api/Co2Api";
+import No2Api from "../client-api/No2Api";
+import MethaneApi from "../client-api/MethaneApi";
+import PolarIceApi from "../client-api/PolarIceApi";
 
 // import style
 import "./dashboards.css";
@@ -20,8 +21,8 @@ const Dashboards = () => {
         <div className="container">
           <TemperatureApi />
           <Co2Api />
-          <MethaneApi />
           <No2Api />
+          <MethaneApi />
           <PolarIceApi />
         </div>
       </div>

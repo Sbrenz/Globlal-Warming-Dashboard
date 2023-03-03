@@ -1,60 +1,46 @@
-import React, { Component } from "react";
-
-// import axios
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-// import chart
-import No2Chart from "../no2/No2Chart";
-
-// Alert from bootstrap
 import Alert from "react-bootstrap/Alert";
+import Graphic from "../chart/Graphic";
 
-export class No2Api extends Component {
-  constructor(props) {
-    super(props);
-    // Make the state for the Api's data and Error handling
-    this.state = {
-      dates: [],
-      averages: [],
-      error: null,
-    };
-  }
+const No2Api = () => {
+  const [no2Dates, setNo2Dates] = useState([]);
+  const [no2Averages, setNo2Averages] = useState([]);
+  const [no2Error, setNo2Error] = useState(null);
 
-  componentDidMount() {
-    // Get data from api
+  useEffect(() => {
     axios
       .get("https://global-warming.org/api/nitrous-oxide-api")
       .then((res) => {
         const data = res.data.nitrous;
-        this.setState({
-          dates: data.slice(1).map((obj) => obj.date),
-          averages: data.slice(1).map((obj) => obj.average),
-        });
-      }) // Error handling
-      .catch((err) => this.setState({ error: err.message }));
-  }
-  render() {
-    return (
-      <section className="text-center d-flex justify-content-center">
-        {this.state.error !== null ? (
-          <div className="errorContainer">
-            <Alert variant="danger">
-              Sorry but there is an error <br />
-              from the server of the No2's data.
-              <br />
-              Please try later.
-            </Alert>
-            <hr />
-          </div>
-        ) : (
-          <No2Chart
-            dateData={this.state.dates}
-            averageData={this.state.averages}
-          />
-        )}
-      </section>
-    );
-  }
-}
+        setNo2Dates(data.slice(1).map((obj) => obj.date));
+        setNo2Averages(data.slice(1).map((obj) => obj.average));
+      })
+      .catch((err) => setNo2Error(err.message));
+  }, []);
+
+  return (
+    <section className="text-center d-flex justify-content-center">
+      {no2Error !== null ? (
+        <div className="errorContainer">
+          <Alert variant="danger">
+            Sorry but there is an error <br />
+            from the server of the No2's data.
+            <br />
+            Please try later.
+          </Alert>
+          <hr />
+        </div>
+      ) : (
+        <Graphic
+          yData={no2Dates}
+          xData={no2Averages}
+          chartType="no2"
+          title="Global increase of nitrogen dioxide"
+        />
+      )}
+    </section>
+  );
+};
 
 export default No2Api;
