@@ -11,7 +11,7 @@ For HTTP requests : Axios
 
 For the chart : Chart.js
 
-## Installation
+## Installation for local usage
 
 In the project folder use the package manager npm to install :
 
