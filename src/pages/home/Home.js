@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../footer/Footer";
+import Footer from "../../components/footer/Footer";
 
 //import compontens
-import Navigationbar from "../navbar/Navigationbar";
+import Navigationbar from "../../components/navbar/Navigationbar";
 //import style
 import "./home.css";
 

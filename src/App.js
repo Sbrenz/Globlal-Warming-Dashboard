@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chart from "chart.js/auto";
 
 // Import components
-import Home from "./components/home/Home";
-import Dashboards from "./components/dashboards/Dashboards";
+import Home from "./pages/home/Home";
+import Dashboards from "./pages/dashboards/Dashboards";
 
 function App() {
   return (

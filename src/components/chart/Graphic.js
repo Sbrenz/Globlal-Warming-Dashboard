@@ -1,9 +1,14 @@
 import React from "react";
 
+// import alert from bootstrap
+import Alert from "react-bootstrap/Alert";
+// import spinner from boostrap
+import Spinner from "react-bootstrap/Spinner";
+
 // import linechart from chart.js
 import { Line } from "react-chartjs-2";
 
-const Graphic = ({ yData, xData, chartType, title }) => {
+const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
   // setting temperature chart
   const temperatureData = {
     labels: yData,
@@ -91,24 +96,48 @@ const Graphic = ({ yData, xData, chartType, title }) => {
     }
   };
 
+  let isLoading = () => {
+    if (loading) {
+      return <Spinner animation="grow" />;
+    }
+  };
+
   return (
     <main>
       <section className="container">
         <div>
           <h1 className="p-5">{title}</h1>
         </div>
-        <div className="text-start">
-          <Line data={chartData()} />
-          {chartType === "co2" ? (
-            <p className="asterisk">*parts per milion</p>
-          ) : null}
-          {chartType === "no2" ? (
-            <p className="asterisk">*parts per bilion</p>
-          ) : null}
-          {chartType === "methane" ? (
-            <p className="asterisk">*parts per bilion</p>
-          ) : null}
-        </div>
+        {loading ? (
+          <div>
+            <Spinner animation="grow" />
+          </div>
+        ) : (
+          <div className="text-start">
+            {error !== null ? (
+              <div className="errorContainer">
+                <Alert variant="danger">
+                  Sorry but there is an error <br />
+                  from the server.
+                  <br />
+                  Please try later.
+                </Alert>
+                <hr />
+              </div>
+            ) : (
+              <Line data={chartData()} />
+            )}
+            {chartType === "co2" ? (
+              <p className="asterisk">*parts per milion</p>
+            ) : null}
+            {chartType === "no2" ? (
+              <p className="asterisk">*parts per bilion</p>
+            ) : null}
+            {chartType === "methane" ? (
+              <p className="asterisk">*parts per bilion</p>
+            ) : null}
+          </div>
+        )}
       </section>
     </main>
   );

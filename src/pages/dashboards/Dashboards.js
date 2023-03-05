@@ -2,13 +2,13 @@ import React from "react";
 
 // import components
 
-import Navigationbar from "../navbar/Navigationbar";
-import Footer from "../footer/Footer";
-import TemperatureApi from "../client-api/TemperatureApi";
-import Co2Api from "../client-api/Co2Api";
-import No2Api from "../client-api/No2Api";
-import MethaneApi from "../client-api/MethaneApi";
-import PolarIceApi from "../client-api/PolarIceApi";
+import Navigationbar from "../../components/navbar/Navigationbar";
+import Footer from "../../components/footer/Footer";
+import TemperatureApi from "../../components/client-api/TemperatureApi";
+import Co2Api from "../../components/client-api/Co2Api";
+import No2Api from "../../components/client-api/No2Api";
+import MethaneApi from "../../components/client-api/MethaneApi";
+import PolarIceApi from "../../components/client-api/PolarIceApi";
 
 // import style
 import "./dashboards.css";
