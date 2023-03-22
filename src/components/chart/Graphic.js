@@ -1,21 +1,39 @@
 import React from "react";
 
-// import alert from bootstrap
+// import components from boostrap
 import Alert from "react-bootstrap/Alert";
-// import spinner from boostrap
 import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
 
 // import linechart from chart.js
 import { Line } from "react-chartjs-2";
 
-const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
+// style
+import style from "./graphic.module.css";
+
+const Graphic = ({
+  yDataTemperature,
+  xDataTemperature,
+  yDataCo2,
+  xDataCo2,
+  yDataNo2,
+  xDataNo2,
+  yDataMethane,
+  xDataMethane,
+  yDataPolarIce,
+  xDataPolarIce,
+  error,
+  loading,
+}) => {
   // setting temperature chart
+
   const temperatureData = {
-    labels: yData,
+    id: "temperature",
+    labels: yDataTemperature,
     datasets: [
       {
         label: "Global Temperature °C",
-        data: xData,
+        data: xDataTemperature,
         backgroundColor: "rgba(255,99,132,0.4)",
         borderColor: "rgba(255,99,132,1)",
         borderWidth: 1,
@@ -25,11 +43,12 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
 
   // setting co2 chart
   const co2Data = {
-    labels: yData,
+    id: "co2",
+    labels: yDataCo2,
     datasets: [
       {
         label: "Global Co2 Increase in PPM*",
-        data: xData,
+        data: xDataCo2,
         backgroundColor: "rgba(25,25,112,0.4)",
         borderColor: "rgba(25,25,112,1)",
         borderWidth: 1,
@@ -39,11 +58,12 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
 
   // setting methane chart
   const methaneData = {
-    labels: yData,
+    id: "methane",
+    labels: yDataMethane,
     datasets: [
       {
         label: "Global methane Increase in PPB*",
-        data: xData,
+        data: xDataMethane,
         backgroundColor: "rgba(255,165,0,0.4)",
         borderColor: "rgba(255,165,0,1)",
         borderWidth: 1,
@@ -53,11 +73,12 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
 
   // setting no2chart
   const no2Data = {
-    labels: yData,
+    id: "no2",
+    labels: yDataNo2,
     datasets: [
       {
         label: "Global No2 emission increase in PPB*",
-        data: xData,
+        data: xDataNo2,
         backgroundColor: "rgba(196,19,192,0.4)",
         borderColor: "rgba(196,19,192,1)",
         borderWidth: 1,
@@ -67,11 +88,12 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
 
   // setting polar ice chart
   const polarIceData = {
-    labels: yData,
+    id: "polarIce",
+    labels: yDataPolarIce,
     datasets: [
       {
         label: "Global decrease of Polar Ice (km²)",
-        data: xData,
+        data: xDataPolarIce,
         backgroundColor: "rgba(11,127,171,0.4)",
         borderColor: "rgba(11, 127, 171, 1)",
         borderWidth: 1,
@@ -79,43 +101,19 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
     ],
   };
 
-  // function to handle the settings for each charts
-  const chartData = () => {
-    switch (chartType) {
-      case "co2":
-        return co2Data;
-      case "methane":
-        return methaneData;
-      case "no2":
-        return no2Data;
-      case "polarIce":
-        return polarIceData;
-      case "temperature":
-      default:
-        return temperatureData;
-    }
-  };
-
-  let isLoading = () => {
-    if (loading) {
-      return <Spinner animation="grow" />;
-    }
-  };
-
   return (
-    <main>
-      <section className="container">
-        <div>
-          <h1 className="p-5">{title}</h1>
-        </div>
+    <section>
+      <Container>
+        {/* temperature chart*/}
+
         {loading ? (
-          <div>
+          <div className={style.spinnerContainer}>
             <Spinner animation="grow" />
           </div>
         ) : (
-          <div className="text-start">
-            {error !== null ? (
-              <div className="errorContainer">
+          <div>
+            {error != null ? (
+              <div className={style.errorContainer}>
                 <Alert variant="danger">
                   Sorry but there is an error <br />
                   from the server.
@@ -125,21 +123,132 @@ const Graphic = ({ yData, xData, chartType, error, loading, title }) => {
                 <hr />
               </div>
             ) : (
-              <Line data={chartData()} />
+              <div className={style.chartContainer}>
+                <h1>Global increase of temperature</h1>
+                <Line data={temperatureData} />
+              </div>
             )}
-            {chartType === "co2" ? (
-              <p className="asterisk">*parts per milion</p>
-            ) : null}
-            {chartType === "no2" ? (
-              <p className="asterisk">*parts per bilion</p>
-            ) : null}
-            {chartType === "methane" ? (
-              <p className="asterisk">*parts per bilion</p>
-            ) : null}
           </div>
         )}
-      </section>
-    </main>
+
+        {/* co2 chart*/}
+
+        {loading ? (
+          <div className={style.spinnerContainer}>
+            <Spinner animation="grow" />
+          </div>
+        ) : (
+          <div>
+            {error != null ? (
+              <div className={style.errorContainer}>
+                <Alert variant="danger">
+                  Sorry but there is an error <br />
+                  from the server.
+                  <br />
+                  Please try later.
+                </Alert>
+                <hr />
+              </div>
+            ) : (
+              <div className={style.chartContainer}>
+                <h1>Global increase of carbon dioxide</h1>
+                <div className={style.asterisk}>
+                  <Line data={co2Data} />
+                  <p>*parts per million</p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* no2 chart */}
+
+        {loading ? (
+          <div className={style.spinnerContainer}>
+            <Spinner animation="grow" />
+          </div>
+        ) : (
+          <div>
+            {error != null ? (
+              <div className={style.errorContainer}>
+                <Alert variant="danger">
+                  Sorry but there is an error <br />
+                  from the server.
+                  <br />
+                  Please try later.
+                </Alert>
+                <hr />
+              </div>
+            ) : (
+              <div className={style.chartContainer}>
+                <h1>Global increase of nitrogen dioxide</h1>
+                <div className={style.asterisk}>
+                  <Line data={no2Data} />
+                  <p>*parts per billion</p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* methane chart */}
+
+        {loading ? (
+          <div className={style.spinnerContainer}>
+            <Spinner animation="grow" />
+          </div>
+        ) : (
+          <div>
+            {error != null ? (
+              <div className={style.errorContainer}>
+                <Alert variant="danger">
+                  Sorry but there is an error <br />
+                  from the server.
+                  <br />
+                  Please try later.
+                </Alert>
+                <hr />
+              </div>
+            ) : (
+              <div className={style.chartContainer}>
+                <h1>Global increase of methane</h1>
+                <div className={style.asterisk}>
+                  <Line data={methaneData} />
+                  <p>*parts per billion</p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* polar ice chart */}
+
+        {loading ? (
+          <div className={style.spinnerContainer}>
+            <Spinner animation="grow" />
+          </div>
+        ) : (
+          <div>
+            {error != null ? (
+              <div className={style.errorContainer}>
+                <Alert variant="danger">
+                  Sorry but there is an error <br />
+                  from the server.
+                  <br />
+                  Please try later.
+                </Alert>
+                <hr />
+              </div>
+            ) : (
+              <div className={style.chartContainer}>
+                <h1>Global decrease of polar ice</h1>
+                <Line data={polarIceData} />
+              </div>
+            )}
+          </div>
+        )}
+      </Container>
+    </section>
   );
 };
 

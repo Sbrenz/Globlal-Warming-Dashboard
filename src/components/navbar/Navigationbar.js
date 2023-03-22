@@ -1,26 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import navbar from bootstrap
+// import components from bootstrap
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 //import style
-import "./navbar.css";
+import style from "./navbar.module.css";
 
 const Navigationbar = () => {
   return (
-    <Navbar className="navigationBar p-5">
-      <Nav className="row d-flex align-items-center">
+    <Navbar className={style.navigationBar}>
+      <Nav>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" />
-        <Navbar.Brand className="col d-flex ">
-          <Link className="link" to={"/"}>
+
+        <Navbar.Brand>
+          <Link className={style.link} to={"/"}>
             Global Warming Dashboard
           </Link>
         </Navbar.Brand>
-        <Nav.Link className="col chartLink">
-          <Link className="link  lead" to={"/dashboard"}>
+
+        <Nav.Link className={style.chartLink}>
+          <Link className={style.link} to={"/dashboard"}>
             Charts
           </Link>
         </Nav.Link>

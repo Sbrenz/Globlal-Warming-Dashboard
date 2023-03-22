@@ -4,15 +4,15 @@ import Footer from "../../components/footer/Footer";
 //import compontens
 import Navigationbar from "../../components/navbar/Navigationbar";
 //import style
-import "./home.css";
+import style from "./home.module.css";
 
 const Home = () => {
   return (
     <div>
       <Navigationbar />
-      <div className="pBox home">
-        <h1 className="p-5">Global warming dashboard</h1>
-        <p className="p-5 lead">
+      <div className={style.home}>
+        <h1 className={style.titleHome}>Global warming dashboard</h1>
+        <p className={style.parag}>
           Climate change is one of the biggest challenges that humanity is
           currently facing.
           <br />
@@ -36,12 +36,12 @@ const Home = () => {
           severe consequences such as increased diseases, loss of habitat,
           <br /> and decreased natural resources.
         </p>
-        <p className="px-5 lead">
+        <p className={style.parag}>
           Here you can check human impact on the environment in the last 150
           years.
         </p>
         <div>
-          <p className="px-5 pb-5 lead">
+          <p className={style.parag}>
             You will see five charts, those rapresent the increase of the
             <br />
             global temperature, carbon dioxide, methane,

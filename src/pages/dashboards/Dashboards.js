@@ -1,33 +1,27 @@
 import React from "react";
 
 // import components
-
 import Navigationbar from "../../components/navbar/Navigationbar";
 import Footer from "../../components/footer/Footer";
-import TemperatureApi from "../../components/client-api/TemperatureApi";
-import Co2Api from "../../components/client-api/Co2Api";
-import No2Api from "../../components/client-api/No2Api";
-import MethaneApi from "../../components/client-api/MethaneApi";
-import PolarIceApi from "../../components/client-api/PolarIceApi";
+import ClientApi from "../../components/client-api/ClientApi";
 
 // import style
-import "./dashboards.css";
+import style from "./dashboards.module.css";
+
+// import components from bootstrap
+import Container from "react-bootstrap/esm/Container";
 
 const Dashboards = () => {
   return (
-    <section>
+    <main className={style.dash}>
       <Navigationbar />
-      <div className="dash text-center container-fluid">
-        <div className="container">
-          <TemperatureApi />
-          <Co2Api />
-          <No2Api />
-          <MethaneApi />
-          <PolarIceApi />
-        </div>
-      </div>
+      <Container as="section">
+        <Container>
+          <ClientApi />
+        </Container>
+      </Container>
       <Footer />
-    </section>
+    </main>
   );
 };
 

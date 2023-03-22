@@ -1,0 +1,26 @@
+:root {
+  --backgroundColorFooter: #212016;
+  --linkFooterColor: white;
+  --linkFooterColorHover: bisque;
+}
+
+footer {
+  background-color: var(--backgroundColorFooter);
+  color: var(--linkFooterColor);
+  display: flex;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+  padding: 2em;
+}
+
+.linkFooter {
+  text-decoration: none;
+  color: var(--linkFooterColor);
+}
+
+.linkFooter:hover {
+  color: var(--linkFooterColorHover);
+}

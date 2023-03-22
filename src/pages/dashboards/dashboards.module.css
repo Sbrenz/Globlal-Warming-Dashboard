@@ -4,12 +4,5 @@
 
 .dash {
   background-color: var(--backgroundColorDash);
-}
-
-.polar {
-  padding-bottom: 2em;
-}
-
-.asterisk {
-  font-size: small;
+  text-align: center;
 }

@@ -1,0 +1,48 @@
+:root {
+  --backgroundColorHome: #e4decd;
+}
+
+.home {
+  background-color: var(--backgroundColorHome);
+  margin: 0;
+  text-align: center;
+}
+
+.home p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 2em;
+}
+
+.pBox p:last-child {
+  margin-top: 3em;
+}
+
+.titleHome {
+  padding: 2em 0 0.5em 0;
+}
+
+.parag {
+  padding: 1em;
+  font-size: large;
+}
+
+@media (max-width: 477px) {
+  .home {
+    padding: 0;
+    text-align: start;
+  }
+  .titleHome {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+  }
+}
+
+@media (min-height: 1143px) {
+  .parag {
+    text-align: start;
+    padding: 2em 10em;
+  }
+  .parag:last-child {
+    padding-top: 0;
+  }
+}

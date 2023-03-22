@@ -1,0 +1,21 @@
+.chartContainer {
+  padding: 2em;
+}
+
+.chartContainer h1 {
+  padding-bottom: 1em;
+}
+
+.asterisk {
+  font-size: small;
+  text-align: start;
+}
+
+.spinnerContainer {
+  padding: 5em;
+}
+
+.errorContainer {
+  padding: 3em;
+  text-align: center;
+}
